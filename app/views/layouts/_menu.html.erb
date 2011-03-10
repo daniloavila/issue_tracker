@@ -1,0 +1,12 @@
+<div id="menu">
+<ul>
+	<li><%= link_to 'Projects', :controller => :projects %></li>
+	<li><%= link_to 'Users', :controller => :users %></li>
+</ul>
+	<%unless session[:usuario].nil? or session[:usuario].blank? %>
+		<div>
+			<%=session[:usuario] %> - <%=link_to 'Logout', :controller => :home, :action=>:logout%>
+		</div>
+		
+	<%end%>
+</div>

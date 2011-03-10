@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IssueTracker</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<div id="wrapper">
+	<%= render :partial => 'layouts/header' %>
+	<div id="body">
+		<%= yield %>
+	</div>
+	<%= yield :javascripts %>
+</div>
+</html>

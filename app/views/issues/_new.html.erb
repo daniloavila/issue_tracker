@@ -1,0 +1,14 @@
+
+<%= form_for @issue, :url => project_issues_path(@project) do |f| %>
+	<p>
+		<%= f.label :name %><br/>
+		<%= f.text_field :name %>
+	</p>
+	<p> 
+		<%= f.label :description %><br/>
+		<%= f.text_area :description, :size => "50x10" %>
+	</p>
+	<p>
+		<%= submit_tag "Create" %> 
+	</p>
+<% end %>

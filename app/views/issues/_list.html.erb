@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<% unless issues.empty? %> 
+	<ul>
+		<% issues.each do |issue| %>
+		<li>
+			<div> 
+				<h3><%= issue.name %></h3> 
+				<div><small><%= issue.user.name if not issue.user.nil? %></small> </div>				
+				<div><small><%= issue.description %></small> </div>
+				<%= link_to 'Remove', project_issue_url(@project.id, issue.id), :confirm => 'Are you sure?', :method => :delete %>
+			</div>
+		</li>
+	</ul>
+<% end %> 
+<% else %>
+	<em>None found.</em>
+<% end %>

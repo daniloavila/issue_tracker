@@ -1,0 +1,46 @@
+#wrapper {
+	margin: 10px;
+}
+#header { 
+	border-bottom: 1px solid black; 
+	margin-bottom: 20px;
+}
+.gray {
+	color: gray;
+}
+
+#menu{
+	margin: 0px;
+}
+
+#menu li {
+	padding: 0px; 
+	list-style-type: none; 
+	cursor: pointer;
+}
+
+#menu li a {
+	font-size: 16px; 
+	padding: 10px; 
+	margin-top: 10px; 
+	margin-left: 20px; 
+	text-decoration: none; 
+	color: black; 
+	float: left;
+} 
+#menu li a:hover {
+	color: #fff; 
+	background-color:#000;
+}
+
+#banner{
+	width: 50%;
+	float: left;
+}
+
+#banner a{
+	text-decoration: none;
+}
+.clear { 
+	clear: both;
+}

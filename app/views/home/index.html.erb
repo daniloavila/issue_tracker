@@ -1,0 +1,41 @@
+<h1>Página Inicial</h1>
+
+<%= form_tag({:controller => :home, :action => :index}, :method => :get) do %>
+	<%= label_tag(:name, "Name:") %>
+	<%= search_field_tag(:name, params[:name]) %>
+	<%= submit_tag("Search") %>
+<% end %>
+
+<h3>User Login</h3>
+<div id="notice"><%=notice%></div>
+<%if session[:usuario].nil? or session[:usuario].blank? %>
+	<%= form_for @user, :url => {:action => :login} do |u| %>
+		<div class="field">
+			<%= u.label :name %>
+			<%= u.text_field :name %>
+		</div>
+
+		<div class="field">
+			<%= u.label :password %>
+			<%= u.password_field :password %>
+		</div>
+
+		<div class="actions">
+	    <%= u.submit 'Login'%>
+	  </div>
+	<% end %>
+<%else%>
+	Bem vindo <%=session[:usuario]%>!
+<%end%>
+
+
+<h2>Last 2 Projects</h2>
+<% unless @projects.blank? %>
+<ul>
+	<% @projects.each do |project| %>
+		<li><%= link_to project.name, project_path(project.id) %></li>		
+	<% end %>
+</ul>
+<% else %> 
+	<em>None found.</em>
+<% end %>

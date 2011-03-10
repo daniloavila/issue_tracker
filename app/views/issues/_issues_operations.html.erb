@@ -1,0 +1,5 @@
+<h3>Issues:</h3> 
+<%= render :partial => 'issues/list', :locals => {:issues => @project.issues} %>
+
+<h2>New Issue</h2>
+<%= render :partial => 'issues/new' %>
